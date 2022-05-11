@@ -41,18 +41,6 @@ import { getCustomerList } from "../../redux/actions/customerAction";
           {this.DataTable()}
         </tbody>
       </Table>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Customer Name</th>
-            <th>Phone</th>
-             </tr>
-        </thead>
-        <tbody>
-          
-        </tbody>
-       
-      </Table>
     </div>);
   }
 }

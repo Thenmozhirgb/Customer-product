@@ -22,13 +22,6 @@ export default function reducer(state = initialState, action) {
                 customerid: action.payload.customerid,
                 c_password: action.payload.c_password
             }
-        {/*case GET_CUSTOMER_LIST:
-            return {
-                ...state,
-                isSignedIn: true,
-                signedInUser: action.response,
-                message: 'Successfully signed in'
-            }*/}
         case GET_CUSTOMER_LIST_SUCCESS:
             return {
                 ...state,
@@ -38,25 +31,6 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 customerList: action.error
-            }
-        case SIGN_IN_SUCESS:
-            return {
-                ...state,
-                isSignedIn: true,
-                signedInUser: action.response,
-                message: 'Successfully signed in'
-            }
-        case SIGN_IN_FAILURE:
-            return {
-                ...state,
-                isSignedIn: false,
-                signedInUser: {},
-                message: action.message
-            }
-        case SIGN_OUT_SUCESS:
-            return {
-                ...state,
-                isSignedIn: false
             }
         default:
             return state;
