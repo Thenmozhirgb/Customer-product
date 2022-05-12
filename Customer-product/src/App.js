@@ -23,6 +23,9 @@ import CreateCustomer from "./components/customer/create-customer";
 import EditCustomer from "./components/customer/edit-customer";
 import CustomerList from "./components/customer/customer-list";
 
+//DAILY DELIVERY SCREEN
+import DailyDelivery from "./components/delivery/daily-delivery";
+
 class App extends Component {
   
   constructor(props) {
@@ -97,6 +100,14 @@ class App extends Component {
                 {
                   this.props.isSignedIn &&
                   <Nav>
+                    <Link to={"/daily-delivery"} className="nav-link">
+                      Daily Delivery
+                    </Link>
+                  </Nav>
+                }
+                {
+                  this.props.isSignedIn &&
+                  <Nav>
                     <Link to={"/sign-out"} className="nav-link" onClick={this.onSignOut}>
                       Sign Out
                     </Link>
@@ -120,6 +131,7 @@ class App extends Component {
                   <Route path="/create-customer" component={CreateCustomer} />
                   <Route path="/edit-customer/:id" component={EditCustomer} />
                   <Route path="/customer-list" component={CustomerList} />
+                  <Route path="/daily-delivery" component={DailyDelivery} />
                   <Route path="/sign-in" component={signIn} />
                   <Route path="/sign-out" component={signIn} />
                 </Switch>

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
-import CustomerTableRow from '../customer/CustomerTableRow';
+import DailyDeliveryTableRow from '../delivery/DailyDeliveryTableRow';
 import { connect } from "react-redux";
 import { getCustomerList } from "../../redux/actions/customerAction";
 
 
- class DayDeliveryCustomerList extends Component {
+ class DailyDelivery extends Component {
 
   constructor(props) {
     super(props)
@@ -14,12 +14,11 @@ import { getCustomerList } from "../../redux/actions/customerAction";
 
   componentDidMount() {
     this.props.getCustomerList();
-      
   }
 
   DataTable() {
     return this.props.customerList ? this.props.customerList.map((res, i) => {
-      return <CustomerTableRow obj={res} key={i} />;
+      return <DailyDeliveryTableRow obj={res} key={i} />;
     }): '';
   }
 
@@ -30,6 +29,7 @@ import { getCustomerList } from "../../redux/actions/customerAction";
           <tr>
             <th>Date</th>
             <th>Customer Name</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -47,4 +47,4 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = (dispatch) => ({
   getCustomerList: (params) => dispatch(getCustomerList(params))
 })
-export default connect(mapStateToProps, mapDispatchToProps)(CustomerList);
+export default connect(mapStateToProps, mapDispatchToProps)(DailyDelivery);
