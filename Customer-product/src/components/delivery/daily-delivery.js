@@ -5,13 +5,13 @@ import DailyDeliveryTableRow from '../delivery/DailyDeliveryTableRow';
 import { connect } from "react-redux";
 import { getCustomerList } from "../../redux/actions/customerAction";
 
-
+// new screen added
  class DailyDelivery extends Component {
 
   constructor(props) {
     super(props)
   }
-
+// customer list view
   componentDidMount() {
     this.props.getCustomerList();
   }

@@ -31,3 +31,4 @@ export default class DailyDeliveryTableRow extends Component {
         );
     }
 }
+// add details
